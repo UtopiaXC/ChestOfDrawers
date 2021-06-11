@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chest of Drawers</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_all">All</string>
+    <string name="title_about">About</string>
+    <string name="exit">Exit</string>
+    <string name="settings">Settings</string>
+</resources>

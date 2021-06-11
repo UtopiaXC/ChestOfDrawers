@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">五斗橱</string>
+    <string name="title_favorites">收藏</string>
+    <string name="title_all">全部</string>
+    <string name="title_about">关于</string>
+    <string name="exit">退出</string>
+    <string name="settings">设置</string>
+</resources>
