@@ -28,6 +28,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    buildToolsVersion '30.0.2'
 }
 
 dependencies {
@@ -43,5 +44,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    
+    //开源库
+    implementation 'com.alibaba:fastjson:1.2.73'
+    implementation 'org.jsoup:jsoup:1.12.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

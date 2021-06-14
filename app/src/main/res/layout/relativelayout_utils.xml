@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <!-- android:clickable="true"  //cardView是否可点击,默认是不可点击的 -->
+    <!-- app:cardCornerRadius="3dp" //圆角 -->
+    <!-- app:cardElevation="8dp" //阴影 -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:clickable="true"
+        android:longClickable="true"
+        android:contextClickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/function_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/ic_baseline_code_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/function_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/function_second_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="45dp"
+            android:textSize="12sp" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

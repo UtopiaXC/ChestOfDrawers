@@ -6,4 +6,14 @@
     <string name="title_about">关于</string>
     <string name="exit">退出</string>
     <string name="settings">设置</string>
+    <string name="success_refresh">刷新成功</string>
+
+
+    <string name="function_weibo_title">微博热搜</string>
+    <string name="function_weibo_second_title">展示当前微博前50的热榜</string>
+
+    <string name="function_nbnhhsh_title">缩写翻译</string>
+    <string name="function_nbnhhsh_second_title">你不能好好说话！！！</string>
+
+
 </resources>
