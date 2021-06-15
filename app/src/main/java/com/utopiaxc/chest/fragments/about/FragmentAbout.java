@@ -19,11 +19,9 @@ public class FragmentAbout extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentAboutBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
 
-
-        return root;
+        return binding.getRoot();
     }
 
     @Override

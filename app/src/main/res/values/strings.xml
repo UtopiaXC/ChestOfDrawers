@@ -6,6 +6,13 @@
     <string name="exit">Exit</string>
     <string name="settings">Settings</string>
     <string name="success_refresh">Refresh Successfully</string>
+    <string name="copied">Copied</string>
+    <string name="input_abbreviation">Please input abbreviation</string>
+    <string name="interface_error">Interface Error</string>
+    <string name="no_favourite">No collection</string>
+    <string name="no_favourite_tip">Please long press on the corresponding tool to collect</string>
+    <string name="do_favourite">Favourite Successfully</string>
+    <string name="cancel_favourite">Cancelled Successfully</string>
 
     <!--功能入口-->
     <string name="function_weibo_title">Hot search on Weibo</string>

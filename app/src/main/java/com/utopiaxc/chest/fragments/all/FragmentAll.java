@@ -1,5 +1,7 @@
 package com.utopiaxc.chest.fragments.all;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.utopiaxc.chest.R;
 import com.utopiaxc.chest.databinding.FragmentAllBinding;
 import com.utopiaxc.chest.adapter.FunctionAdapter;
+import com.utopiaxc.chest.utils.VARIABLES;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +27,9 @@ import java.util.Map;
 public class FragmentAll extends Fragment {
 
     private FragmentAllBinding binding;
-    private enum FUNCTIONS{WEIBO,NBNHHSH}
+
+
+    private List<String> list=new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -48,9 +53,9 @@ public class FragmentAll extends Fragment {
 
 
         //创建数据结构
-        Map<String, Integer> map_icon=new HashMap<>();
-        Map<String,String> map_second_title=new HashMap<>();
-        List<String> list=new ArrayList<>();
+        Map<String, Integer> map_icon = new HashMap<>();
+        Map<String, String> map_second_title = new HashMap<>();
+        list=new ArrayList<>();
 
         //添加微博入口
         map_icon.put(getString(R.string.function_weibo_title),R.drawable.weibo);
@@ -65,7 +70,7 @@ public class FragmentAll extends Fragment {
 
 
         //创建适配器
-        FunctionAdapter adapter = new FunctionAdapter(list,map_icon,map_second_title);
+        FunctionAdapter adapter = new FunctionAdapter(list, map_icon, map_second_title);
 
         adapter.addChildClickViewIds(R.id.card_view);
         adapter.addChildLongClickViewIds(R.id.card_view);
@@ -74,10 +79,10 @@ public class FragmentAll extends Fragment {
         // 设置子控件点击监听
         adapter.setOnItemChildClickListener((adapter1, view, position) -> {
             if (view.getId() == R.id.card_view) {
-                if (position==FUNCTIONS.WEIBO.ordinal()){
+                if (position== VARIABLES.FUNCTIONS.WEIBO.ordinal()){
                     Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityWeibo);
-                }else if (position==FUNCTIONS.NBNHHSH.ordinal()){
-                    Toast.makeText(requireContext(),"选中nbnhhsh",Toast.LENGTH_LONG).show();
+                }else if (position==VARIABLES.FUNCTIONS.NBNHHSH.ordinal()){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityNbnhhsh);
                 }
             }
         });
@@ -93,6 +98,19 @@ public class FragmentAll extends Fragment {
     }
 
     private void doFavourite(int position){
-
+        SharedPreferences sharedPreferences=requireActivity().getSharedPreferences("Favourite", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        String Tool=list.get(position);
+        if (!sharedPreferences.getBoolean(Tool, false)){
+            editor.putBoolean(Tool,true);
+            editor.putInt("CountFavourite",sharedPreferences.getInt("CountFavourite",0)+1);
+            editor.apply();
+            Toast.makeText(getContext(),R.string.do_favourite,Toast.LENGTH_SHORT).show();
+        }else{
+            editor.putBoolean(Tool,false);
+            editor.putInt("CountFavourite",sharedPreferences.getInt("CountFavourite",0)-1);
+            editor.apply();
+            Toast.makeText(getContext(),R.string.cancel_favourite,Toast.LENGTH_SHORT).show();
+        }
     }
 }

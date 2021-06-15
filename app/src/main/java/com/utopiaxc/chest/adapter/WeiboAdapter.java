@@ -7,8 +7,6 @@ import com.utopiaxc.chest.R;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 public class WeiboAdapter extends BaseQuickAdapter<Integer, BaseViewHolder> {

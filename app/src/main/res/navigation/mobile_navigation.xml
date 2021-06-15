@@ -9,7 +9,14 @@
         android:id="@+id/navigation_favourite"
         android:name="com.utopiaxc.chest.fragments.favourite.FragmentFavourite"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityWeibo"
+            app:destination="@id/activityWeibo" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityNbnhhsh"
+            app:destination="@id/activityNbnhhsh" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_all"
@@ -19,6 +26,9 @@
         <action
             android:id="@+id/action_navigation_all_to_activityWeibo"
             app:destination="@id/activityWeibo" />
+        <action
+            android:id="@+id/action_navigation_all_to_activityNbnhhsh"
+            app:destination="@id/activityNbnhhsh" />
     </fragment>
 
     <fragment
@@ -33,4 +43,10 @@
         android:label="@string/function_weibo_title"
         tools:layout="@layout/activity_weibo" >
     </activity>
+
+    <activity
+        android:id="@+id/activityNbnhhsh"
+        android:name="com.utopiaxc.chest.activities.ActivityNbnhhsh"
+        android:label="@string/function_nbnhhsh_title"
+        tools:layout="@layout/activity_nbnhhsh" />
 </navigation>

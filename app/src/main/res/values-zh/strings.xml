@@ -7,6 +7,13 @@
     <string name="exit">退出</string>
     <string name="settings">设置</string>
     <string name="success_refresh">刷新成功</string>
+    <string name="copied">已复制</string>
+    <string name="input_abbreviation">请输入缩写</string>
+    <string name="interface_error">接口错误</string>
+    <string name="no_favourite">暂无收藏</string>
+    <string name="no_favourite_tip">请在全部工具中长按工具来收藏</string>
+    <string name="do_favourite">工具已收藏</string>
+    <string name="cancel_favourite">工具已取消收藏</string>
 
 
     <string name="function_weibo_title">微博热搜</string>
