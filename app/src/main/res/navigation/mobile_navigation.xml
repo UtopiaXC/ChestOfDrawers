@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_favourite">
+    app:startDestination="@+id/navigation_all">
 
     <fragment
         android:id="@+id/navigation_favourite"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_favourite_to_activityNbnhhsh"
             app:destination="@id/activityNbnhhsh" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityBilibiliPic"
+            app:destination="@id/activityBilibiliPic" />
     </fragment>
 
     <fragment
@@ -29,13 +32,20 @@
         <action
             android:id="@+id/action_navigation_all_to_activityNbnhhsh"
             app:destination="@id/activityNbnhhsh" />
+        <action
+            android:id="@+id/action_navigation_all_to_activityBilibiliPic"
+            app:destination="@id/activityBilibiliPic" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_about"
         android:name="com.utopiaxc.chest.fragments.about.FragmentAbout"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_navigation_about_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
+    </fragment>
 
     <activity
         android:id="@+id/activityWeibo"
@@ -49,4 +59,13 @@
         android:name="com.utopiaxc.chest.activities.ActivityNbnhhsh"
         android:label="@string/function_nbnhhsh_title"
         tools:layout="@layout/activity_nbnhhsh" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.utopiaxc.chest.activities.SettingsActivity"
+        android:label="SettingsActivity" />
+    <activity
+        android:id="@+id/activityBilibiliPic"
+        android:name="com.utopiaxc.chest.activities.ActivityBilibiliPic"
+        android:label="activity_bilibili_pic"
+        tools:layout="@layout/activity_bilibili_pic" />
 </navigation>

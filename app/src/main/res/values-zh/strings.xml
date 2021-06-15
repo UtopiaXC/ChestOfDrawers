@@ -14,6 +14,27 @@
     <string name="no_favourite_tip">请在全部工具中长按工具来收藏</string>
     <string name="do_favourite">工具已收藏</string>
     <string name="cancel_favourite">工具已取消收藏</string>
+    <string name="rights">© 2021 UtopiaXC All Rights Reserved</string>
+    <string name="version">版本号</string>
+    <string name="changelog">更新日志</string>
+    <string name="licenses">开源许可证</string>
+    <string name="author">开发者</string>
+    <string name="author_name">UtopiaXC</string>
+    <string name="fork_on_github">在Github中访问</string>
+    <string name="send_an_email">邮件反馈</string>
+    <string name="input_video_number">请输入完整AV/BV号</string>
+    <string name="warning">警告</string>
+    <string name="error">错误</string>
+    <string name="sorry">抱歉</string>
+    <string name="bilibili_code_format_error">您输入的视频号不正确，请确认输入以”AV“或”BV“开头的视频号。</string>
+    <string name="bilibili_http_error">请求失败，请检查您的AV/BV号是否正确，如果正确，则可能是API故障，请发送反馈。</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="theme">主题</string>
+    <string name="day_theme">日间</string>
+    <string name="night_theme">夜间</string>
+    <string name="auto_theme">跟随系统</string>
+    <string name="application_first_fragment">将收藏页面设为首页</string>
 
 
     <string name="function_weibo_title">微博热搜</string>
@@ -21,6 +42,9 @@
 
     <string name="function_nbnhhsh_title">缩写翻译</string>
     <string name="function_nbnhhsh_second_title">你不能好好说话！！！</string>
+
+    <string name="function_bilibili_pic_title">哔哩哔哩视频封面</string>
+    <string name="function_bilibili_pic_second_title">获取指定的哔哩哔哩视频的封面</string>
 
 
 </resources>

@@ -13,6 +13,7 @@ public class WebUtils {
         try {
             Connection.Response response = Jsoup.connect(URL)
                     .userAgent(userAgent)
+                    .ignoreContentType(true)
                     .method(Connection.Method.GET)
                     .execute();
 

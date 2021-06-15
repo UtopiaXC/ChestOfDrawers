@@ -47,15 +47,20 @@ public class FragmentFavourite extends Fragment {
             FunctionAdapter adapter = new FunctionAdapter(list, map_icon, map_second_title);
             recyclerView.setAdapter(adapter);
         } else {
-            if (sharedPreferences.getBoolean(getString(R.string.function_weibo_title), false)) {
+            if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.WEIBO.ordinal()), false)) {
                 map_icon.put(getString(R.string.function_weibo_title), R.drawable.weibo);
                 map_second_title.put(getString(R.string.function_weibo_title), getString(R.string.function_weibo_second_title));
                 list.add(getString(R.string.function_weibo_title));
             }
-            if (sharedPreferences.getBoolean(getString(R.string.function_nbnhhsh_title), false)) {
+            if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.NBNHHSH.ordinal()), false)) {
                 map_icon.put(getString(R.string.function_nbnhhsh_title), R.drawable.question_mark);
                 map_second_title.put(getString(R.string.function_nbnhhsh_title), getString(R.string.function_nbnhhsh_second_title));
                 list.add(getString(R.string.function_nbnhhsh_title));
+            }
+            if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.BILIBILI.ordinal()), false)) {
+                map_icon.put(getString(R.string.function_bilibili_pic_title),R.drawable.bilibili);
+                map_second_title.put(getString(R.string.function_bilibili_pic_title),getString(R.string.function_bilibili_pic_second_title));
+                list.add(getString(R.string.function_bilibili_pic_title));
             }
 
 
@@ -67,19 +72,41 @@ public class FragmentFavourite extends Fragment {
 
             // 设置子控件点击监听
             adapter.setOnItemChildClickListener((adapter1, view, position) -> {
+                String Tool = list.get(position);
+                int goal=0;
+                if (Tool.equals(requireActivity().getString(R.string.function_weibo_title)))
+                    goal=VARIABLES.FUNCTIONS.WEIBO.ordinal();
+                else if(Tool.equals(requireActivity().getString(R.string.function_nbnhhsh_title))){
+                    goal=VARIABLES.FUNCTIONS.NBNHHSH.ordinal();
+                }else if(Tool.equals(requireActivity().getString(R.string.function_bilibili_pic_title))){
+                    goal=VARIABLES.FUNCTIONS.BILIBILI.ordinal();
+                }
                 if (view.getId() == R.id.card_view) {
-                    if (position == VARIABLES.FUNCTIONS.WEIBO.ordinal()) {
+                    if (goal == VARIABLES.FUNCTIONS.WEIBO.ordinal()) {
                         Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityWeibo);
-                    } else if (position == VARIABLES.FUNCTIONS.NBNHHSH.ordinal()) {
+                    } else if (goal == VARIABLES.FUNCTIONS.NBNHHSH.ordinal()) {
                         Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityNbnhhsh);
+                    }else if (goal==VARIABLES.FUNCTIONS.BILIBILI.ordinal()){
+                        Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityBilibiliPic);
                     }
                 }
             });
             adapter.setOnItemChildLongClickListener((adapter12, view, position) -> {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 String Tool = list.get(position);
-                if (sharedPreferences.getBoolean(Tool, false)) {
-                    editor.putBoolean(Tool, false);
+                String goal="0";
+                if (Tool.equals(requireActivity().getString(R.string.function_weibo_title)))
+                    goal=String.valueOf(VARIABLES.FUNCTIONS.WEIBO.ordinal());
+                else if(Tool.equals(requireActivity().getString(R.string.function_nbnhhsh_title))){
+                    goal=String.valueOf(VARIABLES.FUNCTIONS.NBNHHSH.ordinal());
+                }else if(Tool.equals(requireActivity().getString(R.string.function_bilibili_pic_title))){
+                    goal=String.valueOf(VARIABLES.FUNCTIONS.BILIBILI.ordinal());
+                }
+
+
+
+                if (sharedPreferences.getBoolean(goal, false)) {
+                    editor.putBoolean(goal, false);
                     editor.putInt("CountFavourite", sharedPreferences.getInt("CountFavourite", 0) - 1);
                     editor.apply();
                     Toast.makeText(getContext(), R.string.cancel_favourite, Toast.LENGTH_SHORT).show();

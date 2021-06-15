@@ -29,8 +29,6 @@ public class FragmentAll extends Fragment {
     private FragmentAllBinding binding;
 
 
-    private List<String> list=new ArrayList<>();
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -55,7 +53,7 @@ public class FragmentAll extends Fragment {
         //创建数据结构
         Map<String, Integer> map_icon = new HashMap<>();
         Map<String, String> map_second_title = new HashMap<>();
-        list=new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
         //添加微博入口
         map_icon.put(getString(R.string.function_weibo_title),R.drawable.weibo);
@@ -67,6 +65,10 @@ public class FragmentAll extends Fragment {
         map_second_title.put(getString(R.string.function_nbnhhsh_title),getString(R.string.function_nbnhhsh_second_title));
         list.add(getString(R.string.function_nbnhhsh_title));
 
+        //添加bilibili视频封面获取入口
+        map_icon.put(getString(R.string.function_bilibili_pic_title),R.drawable.bilibili);
+        map_second_title.put(getString(R.string.function_bilibili_pic_title),getString(R.string.function_bilibili_pic_second_title));
+        list.add(getString(R.string.function_bilibili_pic_title));
 
 
         //创建适配器
@@ -83,6 +85,8 @@ public class FragmentAll extends Fragment {
                     Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityWeibo);
                 }else if (position==VARIABLES.FUNCTIONS.NBNHHSH.ordinal()){
                     Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityNbnhhsh);
+                }else if (position==VARIABLES.FUNCTIONS.BILIBILI.ordinal()){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityBilibiliPic);
                 }
             }
         });
@@ -100,14 +104,14 @@ public class FragmentAll extends Fragment {
     private void doFavourite(int position){
         SharedPreferences sharedPreferences=requireActivity().getSharedPreferences("Favourite", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
-        String Tool=list.get(position);
-        if (!sharedPreferences.getBoolean(Tool, false)){
-            editor.putBoolean(Tool,true);
+        String function=String.valueOf(position);
+        if (!sharedPreferences.getBoolean(function, false)){
+            editor.putBoolean(function,true);
             editor.putInt("CountFavourite",sharedPreferences.getInt("CountFavourite",0)+1);
             editor.apply();
             Toast.makeText(getContext(),R.string.do_favourite,Toast.LENGTH_SHORT).show();
         }else{
-            editor.putBoolean(Tool,false);
+            editor.putBoolean(function,false);
             editor.putInt("CountFavourite",sharedPreferences.getInt("CountFavourite",0)-1);
             editor.apply();
             Toast.makeText(getContext(),R.string.cancel_favourite,Toast.LENGTH_SHORT).show();

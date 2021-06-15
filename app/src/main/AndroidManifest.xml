@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,14 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChestOfDrawers"
         tools:ignore="AllowBackup">
+        <activity android:name="com.utopiaxc.chest.activities.ActivityBilibiliPic"
+            android:label="@string/function_bilibili_pic_title"/>
         <activity
-            android:name=".activities.ActivityNbnhhsh"
+            android:name="com.utopiaxc.chest.activities.SettingsActivity"
+            android:label="@string/settings" />
+        <activity
+            android:name="com.utopiaxc.chest.activities.ActivityNbnhhsh"
             android:label="@string/function_nbnhhsh_title" />
         <activity
-            android:name=".activities.ActivityWeibo"
+            android:name="com.utopiaxc.chest.activities.ActivityWeibo"
             android:label="@string/function_weibo_title" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.utopiaxc.chest.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
