@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">五斗櫥</string>
+    <string name="title_favorites">收集</string>
+    <string name="title_all">全部</string>
+    <string name="title_about">關於</string>
+    <string name="exit">退出</string>
+    <string name="settings">設置</string>
+    <string name="success_refresh">刷新成功</string>
+    <string name="copied">已複製</string>
+    <string name="input_abbreviation">請鍵入縮寫</string>
+    <string name="interface_error">接口錯誤</string>
+    <string name="no_favourite">暫無收集</string>
+    <string name="no_favourite_tip">請在全部工具中長按工具來收集</string>
+    <string name="do_favourite">工具已收集</string>
+    <string name="cancel_favourite">工具已取消收集</string>
+    <string name="rights">© 2021 UtopiaXC All Rights Reserved</string>
+    <string name="version">版本號</string>
+    <string name="changelog">更新日志</string>
+    <string name="licenses">開源許可證</string>
+    <string name="author">開發者</string>
+    <string name="author_name">UtopiaXC</string>
+    <string name="fork_on_github">在Github中訪問</string>
+    <string name="send_an_email">郵件反饋</string>
+    <string name="input_video_number">請輸入完整的AV/BV号</string>
+    <string name="warning">警告</string>
+    <string name="error">錯誤</string>
+    <string name="sorry">抱歉</string>
+    <string name="bilibili_code_format_error">您鍵入的視頻號不正確，請確認輸入以”AV“或”BV“開頭的視頻號。</string>
+    <string name="bilibili_http_error">請求失敗，請檢查您的AV/BV號是否正確，如果正確，則可能是API故障，請發送反饋。</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">取消</string>
+    <string name="theme">主題</string>
+    <string name="day_theme">日間</string>
+    <string name="night_theme">夜間</string>
+    <string name="auto_theme">跟隨系統</string>
+    <string name="application_first_fragment">將收藏頁面設爲首頁</string>
+
+
+    <string name="function_weibo_title">微博熱搜</string>
+    <string name="function_weibo_second_title">展示當前微博前50的熱榜</string>
+
+    <string name="function_nbnhhsh_title">縮寫翻譯</string>
+    <string name="function_nbnhhsh_second_title">能不能好好説話！！！</string>
+
+    <string name="function_bilibili_pic_title">嗶哩嗶哩視頻封面</string>
+    <string name="function_bilibili_pic_second_title">獲取指定的嗶哩嗶哩視頻的封面</string>
+
+
+</resources>

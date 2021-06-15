@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">引き出し</string>
+    <string name="title_favorites">お気に入り</string>
+    <string name="title_all">すべて</string>
+    <string name="title_about">オン</string>
+    <string name="exit">終了</string>
+    <string name="settings">セットアップ</string>
+    <string name="success_refresh">正常に更新</string>
+    <string name="copied">コピー</string>
+    <string name="input_abbreviation">略語を入力してください</string>
+    <string name="interface_error">インターフェースエラー</string>
+    <string name="no_favourite">コレクションなし</string>
+    <string name="no_favourite_tip">収集するには、すべてのツールでツールを長押ししてください</string>
+    <string name="do_favourite">ツールが収集されました</string>
+    <string name="cancel_favourite">ツールは収集されていません</string>
+    <string name="rights">© 2021 UtopiaXC All Rights Reserved</string>
+    <string name="version">バージョンナンバー</string>
+    <string name="changelog">ログの更新</string>
+    <string name="licenses">オープンソースライセンス</string>
+    <string name="author">開發者</string>
+    <string name="author_name">UtopiaXC</string>
+    <string name="fork_on_github">Githubにアクセス</string>
+    <string name="send_an_email">メールフィードバック</string>
+    <string name="input_video_number">完全なAV / BV番号を入力してください</string>
+    <string name="warning">警告</string>
+    <string name="error">エラー</string>
+    <string name="sorry">ごめんなさい</string>
+    <string name="bilibili_code_format_error">入力した動画番号が間違っています。必ず「AV」または「BV」で始まる動画番号を入力してください</string>
+    <string name="bilibili_http_error">リクエストが失敗しました。AV/ BV番号が正しいかどうかを確認してください。正しい場合は、APIの失敗である可能性があります。フィードバックを送信してください</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">キャンセル</string>
+    <string name="theme">テーマ</string>
+    <string name="day_theme">日間</string>
+    <string name="night_theme">昼間</string>
+    <string name="auto_theme">フォローシステム</string>
+    <string name="application_first_fragment">お気に入りのページをホームページに設定</string>
+
+
+    <string name="function_weibo_title">Weiboのホット検索</string>
+    <string name="function_weibo_second_title">現在の上位50のWeiboホットリストを表示する</string>
+
+    <string name="function_nbnhhsh_title">略語翻訳</string>
+    <string name="function_nbnhhsh_second_title">よく話せますか！！！</string>
+
+    <string name="function_bilibili_pic_title">Bilibiliビデオカバー</string>
+    <string name="function_bilibili_pic_second_title">指定されたBilibiliビデオの表紙を入手してください</string>
+
+
+</resources>
