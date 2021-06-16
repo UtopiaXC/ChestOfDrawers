@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.utopiaxc.chest.R;
 import com.utopiaxc.chest.adapter.WeiboAdapter;
+import com.utopiaxc.chest.beans.BeanWeibo;
 import com.utopiaxc.chest.databinding.ActivityWeiboBinding;
 import com.utopiaxc.chest.utils.VARIABLES;
 import com.utopiaxc.chest.utils.WebUtils;
@@ -30,13 +31,14 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ActivityWeibo extends AppCompatActivity {
     ActivityWeiboBinding binding;
     private final Context context = this;
     private String handlerMessage = "";
-    private Map<Integer, ArrayList<String>> weibo_map;
+    private List<BeanWeibo> list;
     private boolean isRefresh = false;
     private HandlerWeibo messageHandler;
 
@@ -63,7 +65,7 @@ public class ActivityWeibo extends AppCompatActivity {
     private class getWeibo implements Runnable {
         @Override
         public void run() {
-            weibo_map = new HashMap<>();
+            list = new ArrayList<>();
             Document document = WebUtils.getFromURL(VARIABLES.WeiboURL);
 
             Elements elements = document.getElementsByTag("tbody");
@@ -80,10 +82,7 @@ public class ActivityWeibo extends AppCompatActivity {
                     Elements elements_goal = elements_single.get(1).getElementsByTag("a");
                     String title = elements_goal.get(0).text();
                     String url = elements_goal.get(0).attr("href");
-                    ArrayList<String> list = new ArrayList<>();
-                    list.add(title);
-                    list.add("https://s.weibo.com" + url);
-                    weibo_map.put(number, list);
+                    list.add(new BeanWeibo(number,title,VARIABLES.WeiboItemUrl+url));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -104,19 +103,21 @@ public class ActivityWeibo extends AppCompatActivity {
             if (handlerMessage.equals("LayoutRenderingOver")) {
                 RecyclerView recyclerView = binding.recyclerView;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                WeiboAdapter adapter = new WeiboAdapter(weibo_map);
+                WeiboAdapter adapter = new WeiboAdapter(list);
                 adapter.addChildClickViewIds(R.id.card_view);
                 adapter.addChildLongClickViewIds(R.id.card_view);
                 adapter.setOnItemChildClickListener((adapter1, view, position) -> {
                     if (view.getId() == R.id.card_view) {
-                        Uri uri = Uri.parse(weibo_map.get(position + 1).get(1));
+                        BeanWeibo item=(BeanWeibo)adapter1.getItem(position);
+                        Uri uri = Uri.parse(item.getUrl());
                         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(intent);
                     }
                 });
                 adapter.setOnItemChildLongClickListener((adapter12, view, position) -> {
                     if (view.getId() == R.id.card_view) {
-                        String copy = (position + 1) + ". " + weibo_map.get(position + 1).get(0) + " : " + weibo_map.get(position + 1).get(1);
+                        BeanWeibo item=(BeanWeibo)adapter12.getItem(position);
+                        String copy = item.getOrder() + ". " + item.getTitle() + " : " + item.getUrl();
                         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                         ClipData clipData = ClipData.newPlainText(null, copy);
                         clipboard.setPrimaryClip(clipData);
@@ -136,5 +137,4 @@ public class ActivityWeibo extends AppCompatActivity {
             }
         }
     }
-
 }

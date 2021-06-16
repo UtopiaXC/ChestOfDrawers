@@ -18,7 +18,6 @@
         android:contextClickable="true"
         android:foreground="?android:attr/selectableItemBackground"
         android:longClickable="true"
-        app:cardBackgroundColor="#FFFFFF"
         app:cardUseCompatPadding="true">
 
         <TextView

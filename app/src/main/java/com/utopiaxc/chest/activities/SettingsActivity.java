@@ -2,12 +2,13 @@ package com.utopiaxc.chest.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.utopiaxc.chest.R;
+import com.utopiaxc.chest.utils.UIFunctions;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.settings, new SettingsFragment())
                     .commit();
+
         }
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -27,13 +29,19 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public static class SettingsFragment extends PreferenceFragmentCompat {
+    public static class SettingsFragment extends PreferenceFragmentCompat  {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
-
+            ListPreference listPreference=findPreference("theme");
+            listPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+                UIFunctions.setThemeMode(newValue.toString(),requireActivity());
+                return true;
+            });
         }
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

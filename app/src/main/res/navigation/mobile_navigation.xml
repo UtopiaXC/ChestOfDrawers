@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_favourite"
-        android:name="com.utopiaxc.chest.fragments.favourite.FragmentFavourite"
+        android:name="com.utopiaxc.chest.fragments.FragmentFavourite"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_favourite" >
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_all"
-        android:name="com.utopiaxc.chest.fragments.all.FragmentAll"
+        android:name="com.utopiaxc.chest.fragments.FragmentAll"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_all" >
         <action
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/navigation_about"
-        android:name="com.utopiaxc.chest.fragments.about.FragmentAbout"
+        android:name="com.utopiaxc.chest.fragments.FragmentAbout"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_about" >
         <action

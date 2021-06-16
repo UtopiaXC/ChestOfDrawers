@@ -35,6 +35,7 @@
     <string name="night_theme">Night Theme</string>
     <string name="auto_theme">Auto Theme</string>
     <string name="application_first_fragment">Enable favourite page as main page</string>
+    <string name="no_result">No result</string>
 
 
     <!--功能入口-->
@@ -46,4 +47,10 @@
 
     <string name="function_bilibili_pic_title">Bilibili Video Cover</string>
     <string name="function_bilibili_pic_second_title">Get the specified Bilibili video cover</string>
+
+    <!--设置参数-->
+    <string name="day_theme_value" translatable="false">day_theme</string>
+    <string name="night_theme_value" translatable="false">night_theme</string>
+    <string name="auto_theme_value" translatable="false">auto_theme</string>
+
 </resources>

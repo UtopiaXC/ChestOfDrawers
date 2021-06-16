@@ -35,6 +35,7 @@
     <string name="night_theme">昼間</string>
     <string name="auto_theme">フォローシステム</string>
     <string name="application_first_fragment">お気に入りのページをホームページに設定</string>
+    <string name="no_result">検索結果はありません</string>
 
 
     <string name="function_weibo_title">Weiboのホット検索</string>

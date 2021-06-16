@@ -12,21 +12,25 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.utopiaxc.chest.databinding.ActivityMainBinding;
+import com.utopiaxc.chest.utils.UIFunctions;
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         com.utopiaxc.chest.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        String night_mode = PreferenceManager.getDefaultSharedPreferences(this)
+                .getString("theme", this.getString(R.string.auto_theme_value));
+
+        UIFunctions.setThemeMode(night_mode,this);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_favourite, R.id.navigation_all, R.id.navigation_about)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-
-
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean("enable_favourite_first", false)) {
             NavInflater navInflater = navController.getNavInflater();

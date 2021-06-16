@@ -35,6 +35,7 @@
     <string name="night_theme">夜间</string>
     <string name="auto_theme">跟随系统</string>
     <string name="application_first_fragment">将收藏页面设为首页</string>
+    <string name="no_result">查询无结果</string>
 
 
     <string name="function_weibo_title">微博热搜</string>

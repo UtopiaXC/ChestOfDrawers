@@ -1,4 +1,4 @@
-package com.utopiaxc.chest.fragments.about;
+package com.utopiaxc.chest.fragments;
 
 import android.content.Context;
 import android.content.Intent;

@@ -22,12 +22,14 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.utopiaxc.chest.R;
 import com.utopiaxc.chest.adapter.NbnhhshAdapter;
+import com.utopiaxc.chest.beans.BeanNbnhhsh;
 import com.utopiaxc.chest.databinding.ActivityNbnhhshBinding;
 import com.utopiaxc.chest.utils.VARIABLES;
 import com.utopiaxc.chest.utils.WebUtils;
 
 import org.jsoup.nodes.Document;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +40,7 @@ public class ActivityNbnhhsh extends AppCompatActivity {
     private HandlerNbnhhsh messageHandler;
     private String handlerMessage = "";
     private Context context;
-    List<String> list;
+    private List<BeanNbnhhsh> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,30 +78,31 @@ public class ActivityNbnhhsh extends AppCompatActivity {
 
     class getResult implements Runnable {
         String key;
-
         public getResult(String key) {
             this.key = key;
         }
-
         @Override
         public void run() {
             try {
                 List<String> data = new ArrayList<>();
                 data.add("text");
-                data.add(key);
+                data.add(URLEncoder.encode(key,"UTF-8"));
                 Document document = WebUtils.postFromURL(VARIABLES.NbnhhshURL, data);
                 JSONArray json = JSON.parseArray(document.body().text());
                 JSONObject jsonObject = JSONObject.parseObject(json.get(0).toString());
                 if (!jsonObject.containsKey("trans")) {
                     list = new ArrayList<>();
-                    list.add("查询无结果");
+                    list.add(new BeanNbnhhsh(1,getString(R.string.no_result)));
                     handlerMessage = "GetOver";
                     messageHandler.sendMessage(messageHandler.obtainMessage());
                     return;
                 }
                 String result = jsonObject.get("trans").toString().replace("[", "").replace("]", "").replaceAll("\"", "");
                 String[] arr = result.split(",");
-                list = Arrays.asList(arr);
+                list=new ArrayList<>();
+                int flag_order=1;
+                for (String line:arr)
+                    list.add(new BeanNbnhhsh(flag_order++,line));
                 handlerMessage = "GetOver";
                 messageHandler.sendMessage(messageHandler.obtainMessage());
             } catch (Exception e) {
@@ -125,18 +128,19 @@ public class ActivityNbnhhsh extends AppCompatActivity {
                 RecyclerView recyclerView = binding.recyclerView;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 NbnhhshAdapter adapter = new NbnhhshAdapter(list);
+
                 adapter.addChildClickViewIds(R.id.card_view);
                 adapter.setOnItemChildClickListener((adapter1, view, position) -> {
-                    String copy = list.get(position);
+                    BeanNbnhhsh copy = list.get(position);
                     ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-                    ClipData clipData = ClipData.newPlainText(null, copy);
+                    ClipData clipData = ClipData.newPlainText(null, copy.getTitle());
                     clipboard.setPrimaryClip(clipData);
                     Toast.makeText(context, R.string.copied, Toast.LENGTH_SHORT).show();
                 });
+
                 recyclerView.setAdapter(adapter);
                 binding.spinKit.setVisibility(View.GONE);
             }
         }
     }
-
 }

@@ -3,7 +3,7 @@
     <PreferenceCategory app:title="@string/theme">
 
         <ListPreference
-            app:defaultValue="@string/auto_theme"
+            app:defaultValue="auto_theme"
             app:entries="@array/reply_entries"
             app:entryValues="@array/reply_values"
             app:key="theme"
