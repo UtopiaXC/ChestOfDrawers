@@ -6,10 +6,7 @@ import com.utopiaxc.chest.R;
 import com.utopiaxc.chest.beans.BeanWeibo;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class WeiboAdapter extends BaseQuickAdapter<BeanWeibo, BaseViewHolder> {
     public WeiboAdapter(List<BeanWeibo> list) {

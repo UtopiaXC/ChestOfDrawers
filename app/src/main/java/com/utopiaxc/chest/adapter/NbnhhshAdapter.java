@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class NbnhhshAdapter extends BaseQuickAdapter<BeanNbnhhsh, BaseViewHolder> {
-    List<String> list;
     public NbnhhshAdapter(List<BeanNbnhhsh> list) {
         super(R.layout.relativelayout_nbnhhsh,list);
     }
