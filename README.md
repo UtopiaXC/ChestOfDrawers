@@ -44,13 +44,13 @@ This is a practical gadget application like One WoodenLetter.
 
 - [ ] 快递查询 Express inquiry
 
-- [ ] IP查询 IP query
+- [x] IP查询 IP query
 
 - [ ] 号码归属地查询 Number attribution query
 
-- [ ] MD5摘要 MD5 encryption
+- [x] MD5摘要 MD5 encryption
 
-- [ ] Base64
+- [x] Base64
 
 - [ ] 中文数字大小写转换 Chinese number case conversion
 
@@ -73,12 +73,16 @@ This is a practical gadget application like One WoodenLetter.
 3. 网络拼音缩写翻译：[能不能好好说话](https://lab.magiconch.com/nbnhhsh/)
 
    使用其[接口](https://lab.magiconch.com/api/nbnhhsh/guess)
+   
+4. IP查询：[IP-API](https://ip-api.com/)  
+
+   使用其[接口](https://ip-api.com/json/)
 
 ## 4. 部分截图（早期开发中） Partial screenshot（Early development）
 
 1. 全部功能 Main Page
 
-   ![weibo](Pictures/main_page.png)
+   ![main](Pictures/main_page.png)
 
    
 
@@ -108,7 +112,51 @@ This is a practical gadget application like One WoodenLetter.
 
 6. 哔哩哔哩封面获取 Bilibili cover
 
-   ![Bilibili cover](Pictures/bilibili_cover.png)
+   ![Bilibili cover](Pictures/bilibili_cover.png) 
+   
+   
+   
+7. MD5
+
+   ![MD5](Pictures/md5.png) 
+
+   
+
+8. Base64
+
+   ![Base64](Pictures/base64.png)
+   
+   
+
+
+9. IP
+
+   ![IP](Pictures/ip.png)
+   
+   
+
+
+10. Settings
+
+       ![Settings](Pictures/settings.png)
+
+   
+
+
+11. License
+
+       ![License](Pictures/license.png)
+
+   
+
+
+12. Night Mode
+
+       ![Night Mode](Pictures/night_mode.png)
+
+   
+
+
 
 ## 5. 本地化与国际化 Localization and internationalization
 
