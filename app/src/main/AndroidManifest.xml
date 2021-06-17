@@ -5,27 +5,36 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChestOfDrawers"
         tools:ignore="AllowBackup">
-        <activity android:name="com.utopiaxc.chest.activities.ActivityBilibiliPic"
-            android:label="@string/function_bilibili_pic_title"/>
+        <activity android:name=".activities.ActivityIp"
+            android:label="@string/function_ip_title"/>
         <activity
-            android:name="com.utopiaxc.chest.activities.SettingsActivity"
+            android:name=".activities.ActivityBase64"
+            android:label="@string/function_base64_title" />
+        <activity
+            android:name=".activities.ActivityMD5"
+            android:label="@string/function_md5_title" />
+        <activity
+            android:name=".activities.ActivityBilibiliPic"
+            android:label="@string/function_bilibili_pic_title" />
+        <activity
+            android:name=".activities.SettingsActivity"
             android:label="@string/settings" />
         <activity
-            android:name="com.utopiaxc.chest.activities.ActivityNbnhhsh"
+            android:name=".activities.ActivityNbnhhsh"
             android:label="@string/function_nbnhhsh_title" />
         <activity
-            android:name="com.utopiaxc.chest.activities.ActivityWeibo"
+            android:name=".activities.ActivityWeibo"
             android:label="@string/function_weibo_title" />
         <activity
-            android:name="com.utopiaxc.chest.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

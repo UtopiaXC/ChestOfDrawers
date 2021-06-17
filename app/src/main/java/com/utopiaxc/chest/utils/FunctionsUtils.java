@@ -18,14 +18,12 @@ public class FunctionsUtils {
         utilBeans = new ArrayList<>();
         this.context = context;
         if (sharedPreferences.getInt("CountFavourite", 0) == 0 && MODE == VARIABLES.MODE_FAVOURITE) {
-            //无收藏提示
             utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.NO_FAVOURITE,
                     context.getString(R.string.no_favourite),
                     context.getString(R.string.no_favourite_tip),
                     R.drawable.ic_baseline_code_24));
         }
 
-        //微博热搜
         if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.WEIBO), false) || MODE == VARIABLES.MODE_ALL) {
             utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.WEIBO,
                     context.getString(R.string.function_weibo_title),
@@ -34,7 +32,6 @@ public class FunctionsUtils {
         }
 
         if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.NBNHHSH), false) || MODE == VARIABLES.MODE_ALL) {
-            //能不能好好说话
             utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.NBNHHSH,
                     context.getString(R.string.function_nbnhhsh_title),
                     context.getString(R.string.function_nbnhhsh_second_title),
@@ -42,11 +39,31 @@ public class FunctionsUtils {
         }
 
         if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.BILIBILI), false) || MODE == VARIABLES.MODE_ALL) {
-            //哔哩哔哩封面
             utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.BILIBILI,
                     context.getString(R.string.function_bilibili_pic_title),
                     context.getString(R.string.function_bilibili_pic_second_title),
                     R.drawable.bilibili));
+        }
+
+        if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.MD5), false) || MODE == VARIABLES.MODE_ALL) {
+            utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.MD5,
+                    context.getString(R.string.function_md5_title),
+                    context.getString(R.string.function_md5_second_title),
+                    R.drawable.md5));
+        }
+
+        if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.BASE64), false) || MODE == VARIABLES.MODE_ALL) {
+            utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.BASE64,
+                    context.getString(R.string.function_base64_title),
+                    context.getString(R.string.function_base64_second_title),
+                    R.drawable.base64));
+        }
+
+        if (sharedPreferences.getBoolean(String.valueOf(VARIABLES.FUNCTIONS.IP), false) || MODE == VARIABLES.MODE_ALL) {
+            utilBeans.add(new BeanUtil(VARIABLES.FUNCTIONS.IP,
+                    context.getString(R.string.function_ip_title),
+                    context.getString(R.string.function_ip_second_title),
+                    R.drawable.ip));
         }
 
     }

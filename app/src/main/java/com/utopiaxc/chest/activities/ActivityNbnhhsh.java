@@ -32,6 +32,7 @@ import org.jsoup.nodes.Document;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class ActivityNbnhhsh extends AppCompatActivity {
@@ -46,7 +47,7 @@ public class ActivityNbnhhsh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityNbnhhshBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         messageHandler = new HandlerNbnhhsh(this.getMainLooper());
         context = this;
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -87,7 +88,7 @@ public class ActivityNbnhhsh extends AppCompatActivity {
                 data.add("text");
                 data.add(URLEncoder.encode(key,"UTF-8"));
                 Document document = WebUtils.postFromURL(VARIABLES.NbnhhshURL, data);
-                JSONArray json = JSON.parseArray(document.body().text());
+                JSONArray json = JSON.parseArray(Objects.requireNonNull(document).body().text());
                 JSONObject jsonObject = JSONObject.parseObject(json.get(0).toString());
                 if (!jsonObject.containsKey("trans")) {
                     list = new ArrayList<>();
@@ -96,7 +97,7 @@ public class ActivityNbnhhsh extends AppCompatActivity {
                     messageHandler.sendMessage(messageHandler.obtainMessage());
                     return;
                 }
-                String result = jsonObject.get("trans").toString().replace("[", "").replace("]", "").replaceAll("\"", "");
+                String result = Objects.requireNonNull(jsonObject.get("trans")).toString().replace("[", "").replace("]", "").replaceAll("\"", "");
                 String[] arr = result.split(",");
                 list=new ArrayList<>();
                 int flag_order=1;

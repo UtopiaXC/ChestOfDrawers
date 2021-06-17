@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ActivityBase64">
+
+    <EditText
+        android:id="@+id/text_before"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/text_before_encryption"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:minLines="10"
+        app:layout_constraintBottom_toTopOf="@+id/button_encryption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_encryption"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="?attr/colorSurface"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/text_after"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_decrypt"
+        app:layout_constraintTop_toBottomOf="@+id/text_before"
+        app:srcCompat="@drawable/ic_baseline_arrow_downward_24"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/button_decrypt"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:background="?attr/colorSurface"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/text_after"
+        app:layout_constraintEnd_toStartOf="@+id/button_encryption"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_before"
+        app:srcCompat="@drawable/ic_baseline_arrow_upward_24"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/text_after"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/text_after_encryption"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:minLines="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_encryption" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

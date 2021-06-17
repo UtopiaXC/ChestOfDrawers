@@ -31,6 +31,7 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ActivityWeibo extends AppCompatActivity {
     ActivityWeiboBinding binding;
@@ -45,7 +46,7 @@ public class ActivityWeibo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityWeiboBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         messageHandler = new HandlerWeibo(this.getMainLooper());
         new Thread(new getWeibo()).start();
 
@@ -63,27 +64,33 @@ public class ActivityWeibo extends AppCompatActivity {
     private class getWeibo implements Runnable {
         @Override
         public void run() {
-            list = new ArrayList<>();
-            Document document = WebUtils.getFromURL(VARIABLES.WeiboURL);
-
-            Elements elements = document.getElementsByTag("tbody");
-            if (elements.isEmpty()) {
+            try {
+                list = new ArrayList<>();
+                Document document = WebUtils.getFromURL(VARIABLES.WeiboURL);
+                Elements elements = Objects.requireNonNull(document).getElementsByTag("tbody");
+                if (elements.isEmpty()) {
+                    handlerMessage = "WeiboGotFailed";
+                    messageHandler.sendMessage(messageHandler.obtainMessage());
+                    return;
+                }
+                elements = elements.first().getElementsByTag("tr");
+                for (Element element : elements) {
+                    Elements elements_single = element.getElementsByTag("td");
+                    try {
+                        int number = Integer.parseInt(elements_single.get(0).text());
+                        Elements elements_goal = elements_single.get(1).getElementsByTag("a");
+                        String title = elements_goal.get(0).text();
+                        String url = elements_goal.get(0).attr("href");
+                        list.add(new BeanWeibo(number, title, VARIABLES.WeiboItemUrl + url));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }catch (Exception e){
+                e.printStackTrace();
                 handlerMessage = "WeiboGotFailed";
                 messageHandler.sendMessage(messageHandler.obtainMessage());
                 return;
-            }
-            elements = elements.first().getElementsByTag("tr");
-            for (Element element : elements) {
-                Elements elements_single = element.getElementsByTag("td");
-                try {
-                    int number = Integer.parseInt(elements_single.get(0).text());
-                    Elements elements_goal = elements_single.get(1).getElementsByTag("a");
-                    String title = elements_goal.get(0).text();
-                    String url = elements_goal.get(0).attr("href");
-                    list.add(new BeanWeibo(number,title,VARIABLES.WeiboItemUrl+url));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
             handlerMessage = "LayoutRenderingOver";
             messageHandler.sendMessage(messageHandler.obtainMessage());

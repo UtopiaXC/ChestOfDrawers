@@ -3,7 +3,6 @@ package com.utopiaxc.chest.utils;
 import android.content.Context;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.preference.PreferenceManager;
 
 import com.utopiaxc.chest.R;
 

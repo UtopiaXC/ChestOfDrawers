@@ -50,7 +50,7 @@ public class FragmentAll extends Fragment {
         adapter.registerItemClickID();
 
         // 设置子控件点击监听
-        adapter.setOnClickListener();
+        adapter.setOnClickListenerAllMode();
         adapter.setOnLongClickListener(VARIABLES.MODE_ALL, requireActivity());
 
         //添加显示适配器

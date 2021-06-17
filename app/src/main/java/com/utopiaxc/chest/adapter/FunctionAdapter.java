@@ -36,7 +36,7 @@ public class FunctionAdapter extends BaseQuickAdapter<BeanUtil, BaseViewHolder> 
         this.addChildLongClickViewIds(R.id.card_view);
     }
 
-    public void setOnClickListener(){
+    public void setOnClickListenerAllMode(){
         this.setOnItemChildClickListener((adapter1, view, position) -> {
             if (view.getId() == R.id.card_view) {
                 BeanUtil beanUtil= (BeanUtil) adapter1.getItem(position);
@@ -46,10 +46,39 @@ public class FunctionAdapter extends BaseQuickAdapter<BeanUtil, BaseViewHolder> 
                     Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityNbnhhsh);
                 }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.BILIBILI){
                     Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityBilibiliPic);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.MD5){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityMD5);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.BASE64){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityBase64);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.IP){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_all_to_activityIp);
                 }
             }
         });
     }
+
+    public void setOnClickListenerFavouriteMode(){
+        this.setOnItemChildClickListener((adapter1, view, position) -> {
+            if (view.getId() == R.id.card_view) {
+                BeanUtil beanUtil= (BeanUtil) adapter1.getItem(position);
+                if (beanUtil.getFUNCTION_ID()== VARIABLES.FUNCTIONS.WEIBO){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityWeibo);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.NBNHHSH){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityNbnhhsh);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.BILIBILI){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityBilibiliPic);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.MD5){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityMD5);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.BASE64){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityBase64);
+                }else if (beanUtil.getFUNCTION_ID()==VARIABLES.FUNCTIONS.IP){
+                    Navigation.findNavController(view).navigate(R.id.action_navigation_favourite_to_activityIp);
+                }
+            }
+        });
+    }
+
+
 
     public void setOnLongClickListener(int MODE,Context context){
         this.setOnItemChildLongClickListener((adapter1, view, position) -> {

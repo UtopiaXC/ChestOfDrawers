@@ -27,6 +27,7 @@ import org.jsoup.nodes.Document;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
 
 public class ActivityBilibiliPic extends AppCompatActivity {
     private ActivityBilibiliPicBinding binding;
@@ -41,7 +42,7 @@ public class ActivityBilibiliPic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBilibiliPicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         context = this;
         messageHandler=new HandlerBilibiliPic(context.getMainLooper());
 
@@ -99,14 +100,14 @@ public class ActivityBilibiliPic extends AppCompatActivity {
             try {
                 Document document = WebUtils.getFromURL(URL);
 
-                JSONObject jsonObject = JSON.parseObject(document.body().text());
-                if (Integer.parseInt(jsonObject.get("code").toString())!=0){
+                JSONObject jsonObject = JSON.parseObject(Objects.requireNonNull(document).body().text());
+                if (Integer.parseInt(Objects.requireNonNull(jsonObject.get("code")).toString())!=0){
                     handlerMessage="PicGetError";
                     messageHandler.sendMessage(messageHandler.obtainMessage());
                     return;
                 }
-                jsonObject=JSONObject.parseObject(jsonObject.get("data").toString());
-                pic=jsonObject.get("pic").toString().replace("http","https");
+                jsonObject=JSONObject.parseObject(Objects.requireNonNull(jsonObject.get("data")).toString());
+                pic= Objects.requireNonNull(jsonObject.get("pic")).toString().replace("http","https");
                 bitmap = getHttpBitmap(pic);
 
                 handlerMessage="PicGetSuccessfully";

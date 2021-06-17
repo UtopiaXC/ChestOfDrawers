@@ -19,6 +19,15 @@
         <action
             android:id="@+id/action_navigation_favourite_to_activityBilibiliPic"
             app:destination="@id/activityBilibiliPic" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityMD5"
+            app:destination="@id/activityMD5" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityBase64"
+            app:destination="@id/activityBase64" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_activityIp"
+            app:destination="@id/activityIp" />
     </fragment>
 
     <fragment
@@ -35,6 +44,15 @@
         <action
             android:id="@+id/action_navigation_all_to_activityBilibiliPic"
             app:destination="@id/activityBilibiliPic" />
+        <action
+            android:id="@+id/action_navigation_all_to_activityMD5"
+            app:destination="@id/activityMD5" />
+        <action
+            android:id="@+id/action_navigation_all_to_activityBase64"
+            app:destination="@id/activityBase64" />
+        <action
+            android:id="@+id/action_navigation_all_to_activityIp"
+            app:destination="@id/activityIp" />
     </fragment>
 
     <fragment
@@ -68,4 +86,19 @@
         android:name="com.utopiaxc.chest.activities.ActivityBilibiliPic"
         android:label="activity_bilibili_pic"
         tools:layout="@layout/activity_bilibili_pic" />
+    <activity
+        android:id="@+id/activityMD5"
+        android:name="com.utopiaxc.chest.activities.ActivityMD5"
+        android:label="activity_md5"
+        tools:layout="@layout/activity_md5" />
+    <activity
+        android:id="@+id/activityBase64"
+        android:name="com.utopiaxc.chest.activities.ActivityBase64"
+        android:label="activity_base64"
+        tools:layout="@layout/activity_base64" />
+    <activity
+        android:id="@+id/activityIp"
+        android:name="com.utopiaxc.chest.activities.ActivityIp"
+        android:label="activity_ip"
+        tools:layout="@layout/activity_ip" />
 </navigation>

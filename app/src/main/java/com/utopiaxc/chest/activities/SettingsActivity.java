@@ -10,6 +10,8 @@ import androidx.preference.PreferenceFragmentCompat;
 import com.utopiaxc.chest.R;
 import com.utopiaxc.chest.utils.UIFunctions;
 
+import java.util.Objects;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -34,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
             ListPreference listPreference=findPreference("theme");
-            listPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+            Objects.requireNonNull(listPreference).setOnPreferenceChangeListener((preference, newValue) -> {
                 UIFunctions.setThemeMode(newValue.toString(),requireActivity());
                 return true;
             });

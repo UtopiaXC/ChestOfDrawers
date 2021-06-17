@@ -36,7 +36,20 @@
     <string name="auto_theme">フォローシステム</string>
     <string name="application_first_fragment">お気に入りのページをホームページに設定</string>
     <string name="no_result">検索結果はありません</string>
-
+    <string name="text_before_encryption">暗号化前のテキスト</string>
+    <string name="text_after_encryption">暗号化されたテキスト</string>
+    <string name="no_text_input">テキストを入力してください</string>
+    <string name="use_my_ip">私のIPを使用する</string>
+    <string name="country">县</string>
+    <string name="state">州</string>
+    <string name="city">市</string>
+    <string name="city_code">市コード</string>
+    <string name="area">ブロック</string>
+    <string name="isp">ISP</string>
+    <string name="ip">IP</string>
+    <string name="longitude">経度</string>
+    <string name="latitude">緯度</string>
+    <string name="ip_format_error">IPフォーマットが正しくありません</string>
 
     <string name="function_weibo_title">Weiboのホット検索</string>
     <string name="function_weibo_second_title">現在の上位50のWeiboホットリストを表示する</string>
@@ -47,5 +60,13 @@
     <string name="function_bilibili_pic_title">Bilibiliビデオカバー</string>
     <string name="function_bilibili_pic_second_title">指定されたBilibiliビデオの表紙を入手してください</string>
 
+    <string name="function_md5_title">MD5暗号化</string>
+    <string name="function_md5_second_title">MD5アルゴリズムで文字列を暗号化する</string>
+
+    <string name="function_base64_title">Base64の暗号化と復号化</string>
+    <string name="function_base64_second_title">Base64アルゴリズムを使用して文字列を暗号化および復号化します</string>
+
+    <string name="function_ip_title">IPクエリ</string>
+    <string name="function_ip_second_title">自分または他の人のIP情報を照会する</string>
 
 </resources>

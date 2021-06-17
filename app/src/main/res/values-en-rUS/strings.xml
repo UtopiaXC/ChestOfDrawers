@@ -36,6 +36,20 @@
     <string name="auto_theme">Auto Theme</string>
     <string name="application_first_fragment">Enable favourite page as main page</string>
     <string name="no_result">No result</string>
+    <string name="text_before_encryption">Text before encryption</string>
+    <string name="text_after_encryption">Text After encryption</string>
+    <string name="no_text_input">Please input text</string>
+    <string name="use_my_ip">Use my IP</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="city_code">City Code</string>
+    <string name="area">Area</string>
+    <string name="isp">ISP</string>
+    <string name="ip">IP</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="ip_format_error">Your IP format is wrong</string>
 
 
     <!--功能入口-->
@@ -47,4 +61,14 @@
 
     <string name="function_bilibili_pic_title">Bilibili Video Cover</string>
     <string name="function_bilibili_pic_second_title">Get the specified Bilibili video cover</string>
+
+    <string name="function_md5_title">MD5 Encryption</string>
+    <string name="function_md5_second_title">Encrypt your string with MD5 algorithm</string>
+
+    <string name="function_base64_title">Base64 encryption/decryption</string>
+    <string name="function_base64_second_title">Encrypt and decrypt your string with Base64 algorithm</string>
+
+    <string name="function_ip_title">IP Query</string>
+    <string name="function_ip_second_title">Query your or others\' ip information</string>
+
 </resources>

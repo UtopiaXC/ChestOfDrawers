@@ -33,7 +33,7 @@ public class FragmentFavourite extends Fragment {
         List<BeanUtil> list = functionsUtils.getUtilBeans();
         FunctionAdapter adapter = new FunctionAdapter(list);
         adapter.registerItemClickID();
-        adapter.setOnClickListener();
+        adapter.setOnClickListenerFavouriteMode();
         adapter.setOnLongClickListener(VARIABLES.MODE_FAVOURITE, requireActivity());
         recyclerView.setAdapter(adapter);
         return root;

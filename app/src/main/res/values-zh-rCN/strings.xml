@@ -36,6 +36,20 @@
     <string name="auto_theme">跟随系统</string>
     <string name="application_first_fragment">将收藏页面设为首页</string>
     <string name="no_result">查询无结果</string>
+    <string name="text_before_encryption">加密前的文字</string>
+    <string name="text_after_encryption">加密后的文字</string>
+    <string name="no_text_input">请输入文字</string>
+    <string name="use_my_ip">使用我的IP地址</string>
+    <string name="country">国家</string>
+    <string name="state">省</string>
+    <string name="city">市</string>
+    <string name="city_code">城市码</string>
+    <string name="area">区/县</string>
+    <string name="isp">ISP</string>
+    <string name="ip">IP地址</string>
+    <string name="longitude">经度</string>
+    <string name="latitude">纬度</string>
+    <string name="ip_format_error">您的IP地址格式不正确</string>
 
 
     <string name="function_weibo_title">微博热搜</string>
@@ -47,5 +61,13 @@
     <string name="function_bilibili_pic_title">哔哩哔哩视频封面</string>
     <string name="function_bilibili_pic_second_title">获取指定的哔哩哔哩视频的封面</string>
 
+    <string name="function_md5_title">MD5加密</string>
+    <string name="function_md5_second_title">将您的字符串用MD5摘要算法加密</string>
+
+    <string name="function_base64_title">Base64加解密</string>
+    <string name="function_base64_second_title">将您的字符串用Base64算法加解密</string>
+
+    <string name="function_ip_title">IP查询</string>
+    <string name="function_ip_second_title">查询您或他人的IP信息</string>
 
 </resources>
