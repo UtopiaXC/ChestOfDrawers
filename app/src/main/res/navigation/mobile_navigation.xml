@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_navigation_about_to_settingsActivity"
             app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_navigation_about_to_activityLicences"
+            app:destination="@id/activityLicences" />
     </fragment>
 
     <activity
@@ -101,4 +104,9 @@
         android:name="com.utopiaxc.chest.activities.ActivityIp"
         android:label="activity_ip"
         tools:layout="@layout/activity_ip" />
+    <activity
+        android:id="@+id/activityLicences"
+        android:name="com.utopiaxc.chest.activities.ActivityLicences"
+        android:label="activity_licences"
+        tools:layout="@layout/activity_licences" />
 </navigation>

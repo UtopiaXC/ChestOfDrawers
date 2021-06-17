@@ -17,6 +17,7 @@
     <string name="rights">© 2021 UtopiaXC All Rights Reserved</string>
     <string name="version">バージョンナンバー</string>
     <string name="changelog">ログの更新</string>
+    <string name="changelog_title">ログの更新(Please wait for loading)</string>
     <string name="licenses">オープンソースライセンス</string>
     <string name="author">開發者</string>
     <string name="author_name">UtopiaXC</string>

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import androidx.navigation.Navigation;
+
 import com.danielstone.materialaboutlibrary.ConvenienceBuilder;
 import com.danielstone.materialaboutlibrary.MaterialAboutFragment;
 import com.danielstone.materialaboutlibrary.items.MaterialAboutActionItem;
@@ -13,6 +15,7 @@ import com.danielstone.materialaboutlibrary.model.MaterialAboutList;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.utopiaxc.chest.R;
+import com.utopiaxc.chest.activities.ActivityLicences;
 import com.utopiaxc.chest.activities.SettingsActivity;
 import com.utopiaxc.chest.databinding.FragmentAboutBinding;
 
@@ -42,7 +45,7 @@ public class FragmentAbout extends MaterialAboutFragment {
                 .icon(new IconicsDrawable(activityContext)
                         .icon(CommunityMaterial.Icon.cmd_content_paste)
                         .sizeDp(18))
-                .setOnClickAction(ConvenienceBuilder.createWebViewDialogOnClickAction(activityContext, requireActivity().getString(R.string.changelog), "https://github.com/UtopiaXC/ChestOfDrawers/releases", true, false))
+                .setOnClickAction(ConvenienceBuilder.createWebViewDialogOnClickAction(activityContext, requireActivity().getString(R.string.changelog_title), "https://github.com/UtopiaXC/ChestOfDrawers/releases", true, false))
                 .build());
 
         appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
@@ -50,8 +53,9 @@ public class FragmentAbout extends MaterialAboutFragment {
                 .icon(new IconicsDrawable(activityContext)
                         .icon(CommunityMaterial.Icon.cmd_book)
                         .sizeDp(18))
-                .setOnClickAction(() -> {
-
+                .setOnClickAction(() ->{
+                    Intent intent=new Intent(activityContext, ActivityLicences.class);
+                    startActivity(intent);
                 })
                 .build());
 

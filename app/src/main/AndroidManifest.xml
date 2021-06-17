@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChestOfDrawers"
         tools:ignore="AllowBackup">
-        <activity android:name=".activities.ActivityIp"
-            android:label="@string/function_ip_title"/>
+        <activity android:name=".activities.ActivityLicences"
+            android:label="@string/licenses"/>
+        <activity
+            android:name=".activities.ActivityIp"
+            android:label="@string/function_ip_title" />
         <activity
             android:name=".activities.ActivityBase64"
             android:label="@string/function_base64_title" />

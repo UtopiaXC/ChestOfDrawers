@@ -17,6 +17,7 @@
     <string name="rights">© 2021 UtopiaXC All Rights Reserved</string>
     <string name="version">版本号</string>
     <string name="changelog">更新日志</string>
+    <string name="changelog_title">更新日志（请等待从Github的加载）</string>
     <string name="licenses">开源许可证</string>
     <string name="author">开发者</string>
     <string name="author_name">UtopiaXC</string>
